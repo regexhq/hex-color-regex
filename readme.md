@@ -3,7 +3,7 @@
 > Regular expression (regex) for matching hex color values from string.
 
 ## Install
-```bash
+```
 npm i --save hex-color-regex
 npm test
 ```
@@ -14,10 +14,57 @@ npm test
 
 ```js
 var hexColorRegex = require('hex-color-regex');
+
+hexColorRegex().test('#f3f}') //=> false, for now
+hexColorRegex().test('#4g1') //=> false
+hexColorRegex().test('#zY1') //=> false
+hexColorRegex().test('111') //=> false
+hexColorRegex().test('fff') //=> false
+hexColorRegex().test('#7f68ZY') //=> false
+hexColorRegex().test('#GR68') //=> false
+hexColorRegex().test('#abcd') //=> false
+hexColorRegex().test('abcd') //=> false
+hexColorRegex().test('708135') //=> false
+hexColorRegex().test('ffffff') //=> false
+hexColorRegex().test('afebef') //=> false
+hexColorRegex().test('#113141}') //=> false, for now
+
+hexColorRegex().test('#afebe3') //=> true
+hexColorRegex().test('#AFEBE3') //=> true
+hexColorRegex().test('#3cb371') //=> true
+hexColorRegex().test('#3CB371') //=> true
+hexColorRegex().test('#556b2f') //=> true
+hexColorRegex().test('#556B2F') //=> true
+hexColorRegex().test('#708090') //=> true
+hexColorRegex().test('#7b68ee') //=> true
+hexColorRegex().test('#7B68EE') //=> true
+hexColorRegex().test('#eeeeee') //=> true
+hexColorRegex().test('#ffffff') //=> true
+hexColorRegex().test('#111111') //=> true
+hexColorRegex().test('#afe') //=> true
+hexColorRegex().test('#AF3') //=> true
+hexColorRegex().test('#3cb') //=> true
+hexColorRegex().test('#3CB') //=> true
+hexColorRegex().test('#b2f') //=> true
+hexColorRegex().test('#5B2') //=> true
+hexColorRegex().test('#708') //=> true
+hexColorRegex().test('#68e') //=> true
+hexColorRegex().test('#7AF') //=> true
+hexColorRegex().test('#777') //=> true
+hexColorRegex().test('#FFF') //=> true
+hexColorRegex().test('#fff') //=> true
 ```
 
 
-## API / CLI
+## Matching groups
+
+```js
+hexColorRegex().exec('#a1b2c3');
+//=> ['#a1b2c3', 'a1b2c3', index: 0, input: '#a1b2c3']
+```
+
+- `[0]` with the hash sign (`#afafaf`)
+- `[1]` without hash sign (`afafaf`)
 
 
 ## Author
@@ -59,4 +106,4 @@ Released under the [`MIT`][license-url] license.
 
 ***
 
-_Powered and automated by [kdf](https://github.com/tunnckoCore), February 2, 2015_
+_Powered and automated by [kdf](https://github.com/tunnckoCore), February 3, 2015_
