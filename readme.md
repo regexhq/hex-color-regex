@@ -47,7 +47,7 @@ Released under the [`MIT`][license-url] license.
 [travis-img]: https://img.shields.io/travis/regexps/hex-color-regex.svg?style=flat
 
 [daviddm-url]: https://david-dm.org/regexps/hex-color-regex
-[daviddm-img]: https://img.shields.io/david/regexps/hex-color-regex.svg?style=flat
+[daviddm-img]: https://img.shields.io/david/dev/regexps/hex-color-regex.svg?style=flat
 
 [author-gratipay]: https://gratipay.com/tunnckoCore
 [author-twitter]: https://twitter.com/tunnckoCore
