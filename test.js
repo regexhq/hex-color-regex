@@ -7,9 +7,7 @@
 
 'use strict';
 
-var assert = require('assert');
+var mukla = require('mukla');
 var hexColorRegex = require('./index');
 
-describe('hex-color-regex:', function() {
-  // body
-});
+mukla('should be true when 6-digit hex value').strictEqual(hexColorRegex().test('#afefe3'), true);
