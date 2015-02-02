@@ -1,0 +1,31 @@
+{
+  "name": "hex-color-regex",
+  "version": "0.0.0",
+  "description": "Regular expression (regex) for matching hex color values from string.",
+  "scripts": {
+    "lint": "jshint index.js && jscs index.js --reporter inline",
+    "test": "mocha",
+    "test-cov": "istanbul cover _mocha",
+    "test-travis": "istanbul cover _mocha --report lcovonly"
+  },
+  "author": {
+    "name": "Charlike Make Reagent",
+    "email": "mameto_100@mail.bg",
+    "url": "https://github.com/tunnckoCore"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/regexps/hex-color-regex.git"
+  },
+  "keywords": [],
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/regexps/hex-color-regex/blob/master/license.md"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "istanbul-harmony": "^0.3.1",
+    "mocha": "*",
+    "mocha-lcov-reporter": "^0.0.1"
+  }
+}
