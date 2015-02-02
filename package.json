@@ -4,7 +4,7 @@
   "description": "Regular expression (regex) for matching hex color values from string.",
   "scripts": {
     "lint": "jshint index.js && jscs index.js --reporter inline",
-    "test": "mocha",
+    "test": "node test.js",
     "test-cov": "istanbul cover _mocha",
     "test-travis": "istanbul cover _mocha --report lcovonly"
   },
@@ -24,8 +24,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "istanbul-harmony": "^0.3.1",
-    "mocha": "*",
-    "mocha-lcov-reporter": "^0.0.1"
+    "mukla": "~0.0.0"
   }
 }
