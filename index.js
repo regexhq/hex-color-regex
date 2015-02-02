@@ -8,5 +8,6 @@
 'use strict';
 
 module.exports = function hexColorRegex() {
-  // body
+  var regex = /(#([a-f0-9]{3})([a-f0-9]{3})?)/i;
+  return regex;
 };
