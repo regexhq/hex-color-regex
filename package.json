@@ -4,9 +4,7 @@
   "description": "Regular expression (regex) for matching hex color values from string.",
   "scripts": {
     "lint": "jshint index.js && jscs index.js --reporter inline",
-    "test": "node test.js",
-    "test-cov": "istanbul cover _mocha",
-    "test-travis": "istanbul cover _mocha --report lcovonly"
+    "test": "node test.js"
   },
   "author": {
     "name": "Charlike Make Reagent",
@@ -17,7 +15,22 @@
     "type": "git",
     "url": "git://github.com/regexps/hex-color-regex.git"
   },
-  "keywords": [],
+  "keywords": [
+    "color",
+    "colors",
+    "css",
+    "expr",
+    "expression",
+    "expressions",
+    "hex",
+    "match",
+    "matching",
+    "regex",
+    "regexp",
+    "regexps",
+    "regular",
+    "web"
+  ],
   "license": {
     "type": "MIT",
     "url": "https://github.com/regexps/hex-color-regex/blob/master/license.md"
