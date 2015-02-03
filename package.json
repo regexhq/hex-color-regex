@@ -1,6 +1,6 @@
 {
   "name": "hex-color-regex",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Regular expression (regex) for matching hex color values from string.",
   "scripts": {
     "lint": "jshint index.js && jscs index.js --reporter inline",
