@@ -38,6 +38,6 @@
   "dependencies": {},
   "devDependencies": {
     "bluebird": "^2.9.14",
-    "mukla": "~0.0.0"
+    "mukla": "~0.1.0"
   }
 }
