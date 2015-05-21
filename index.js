@@ -7,7 +7,8 @@
 
 'use strict';
 
-module.exports = function hexColorRegex() {
-  var regex = /#([a-f0-9]{6}|[a-f0-9]{3})\b/gi
+module.exports = function hexColorRegex(config) {
+  config = config || {};
+  var regex = config.strict ? /^#([a-f0-9]{6}|[a-f0-9]{3})\b$/gi : /#([a-f0-9]{6}|[a-f0-9]{3})\b/gi
   return regex;
 };
