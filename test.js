@@ -96,6 +96,9 @@ test('hex-color-regex:', function () {
             test.equal(hexColorRegex().test(hex), true)
           })
         })
+        test('when `foo #ae3f4c bar` value', function () {
+          test.equal(hexColorRegex().test('foo #ae3f4c bar'), true)
+        })
       })
       test('should be `false`', function () {
         sixDigits.fail.forEach(function (hex) {
@@ -111,6 +114,9 @@ test('hex-color-regex:', function () {
           test('when `' + hex + '` value', function () {
             test.equal(hexColorRegex().test(hex), true)
           })
+        })
+        test('when `foo #e4f bar` value', function () {
+          test.equal(hexColorRegex().test('foo #e4f bar'), true)
         })
       })
       test('should be `false`', function () {
@@ -131,6 +137,12 @@ test('hex-color-regex:', function () {
           test.equal(actual, expected)
         })
       })
+      test('should match `#ae3f4c` when `foo #ae3f4c bar` string', function () {
+        var actual = hexColorRegex().exec('foo #ae3f4c bar')[0]
+        var expected = '#ae3f4c'
+
+        test.equal(actual, expected)
+      })
       threeDigits.pass.forEach(function (hex) {
         var hexed = hex.replace('}', '')
         test('should match `' + hexed + '` when `' + hex + '` hex', function () {
@@ -140,14 +152,38 @@ test('hex-color-regex:', function () {
           test.equal(actual, expected)
         })
       })
+      test('should match `#e7f` when `foo #e7f bar` string', function () {
+        var actual = hexColorRegex().exec('foo #e7f bar')[0]
+        var expected = '#e7f'
+
+        test.equal(actual, expected)
+      })
     })
   })
   test('in strict mode', function () {
     test('six digit hex `#123fff}` should return false', function () {
       test.equal(hexColorRegex({strict: true}).test('#123fff}'), false)
     })
+    test('string contain six digit hex `foo #ae3f4c bar` return false', function () {
+      test.equal(hexColorRegex({strict: true}).test('foo #ae3f4c bar'), false)
+    })
     test('three digit hex `#f3f}` should return false', function () {
       test.equal(hexColorRegex({strict: true}).test('#f3f}'), false)
+    })
+    test('string contain three digit hex `foo #e7f bar` return false', function () {
+      test.equal(hexColorRegex({strict: true}).test('foo #e7f bar'), false)
+    })
+    test('should not match when `foo #ae3f4c bar` string', function () {
+      var actual = hexColorRegex({strict: true}).exec('foo #ae3f4c bar')
+      var expected = null
+
+      test.equal(actual, expected)
+    })
+    test('should not match when `foo #e7f bar` string', function () {
+      var actual = hexColorRegex({strict: true}).exec('foo #e7f bar')
+      var expected = null
+
+      test.equal(actual, expected)
     })
   })
 })
