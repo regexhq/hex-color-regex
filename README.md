@@ -15,6 +15,10 @@ npm test
 ## Usage
 > For more use-cases see the [tests](./test.js)
 
+- `[opts]` **{Object}** pass `strict: true` for strict mode
+- `return` **{RegExp}**
+
+**Example**
 ```js
 var hexColorRegex = require('hex-color-regex')
 
@@ -69,6 +73,27 @@ hexColorRegex().test('#7AF') //=> true
 hexColorRegex().test('#777') //=> true
 hexColorRegex().test('#FFF') //=> true
 hexColorRegex().test('#fff') //=> true
+```
+
+
+## Matching groups
+
+- `match[0]` hex value with hash - `#f3f3f3`
+- `match[1]` hex value without the hash - `f3f3f3`
+
+**Example**
+```js
+hexColorRegex().exec('foo #fff bar')
+//=> [ '#fff', 'fff', index: 4, input: 'foo #fff bar' ]
+
+hexColorRegex({strict: true}).exec('foo #fff bar')
+//=> null
+
+hexColorRegex().exec('foo #f3f3f3 bar')
+//=> [ '#f3f3f3', 'f3f3f3', index: 4, input: 'foo #f3f3f3 bar' ]
+
+hexColorRegex({strict: true}).exec('foo #f3f3f3 bar')
+//=> null
 ```
 
 
