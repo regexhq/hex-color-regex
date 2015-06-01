@@ -84,6 +84,8 @@ var threeDigits = {
   ]
 };
 
+var urlTest = 'http://www.example.com/index.html#f06d06';
+
 sixDigits.pass.forEach(function(hex) {
   mukla('should be `true` when `'+ hex +'` value').strictEqual(regex().test(hex), true);
 });
@@ -97,3 +99,7 @@ threeDigits.pass.forEach(function(hex) {
 threeDigits.fail.forEach(function(hex) {
   mukla('should be `false` when `'+ hex +'` hex value').strictEqual(regex().test(hex), false);
 });
+mukla('should be `false` when `' + urlTest + '` is passed in with strict mode').strictEqual(regex({strict:true}).test(urlTest), false);
+mukla('should be `true` when `' + urlTest + '` is passed in without strict mode').strictEqual(regex().test(urlTest), true);
+
+

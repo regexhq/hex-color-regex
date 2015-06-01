@@ -8,6 +8,13 @@ npm i --save hex-color-regex
 npm test
 ```
 
+## Parameters
+
+### strict 
+
+_default: false_
+
+Tests also to see if the hex is the _only_ token passed in (adds ^ to the beginning and $ to the end.)
 
 ## Usage
 > For more use-cases see the [tests](./test.js)
@@ -28,6 +35,7 @@ hexColorRegex().test('708135') //=> false
 hexColorRegex().test('ffffff') //=> false
 hexColorRegex().test('afebef') //=> false
 hexColorRegex().test('#113141}') //=> false, for now
+hexColorRegex({strict:true}).test('http://www.example.com/index.html#f06d06}') //=> false
 
 hexColorRegex().test('#afebe3') //=> true
 hexColorRegex().test('#AFEBE3') //=> true
