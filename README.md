@@ -128,7 +128,7 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 [coveralls-img]: https://img.shields.io/coveralls/regexps/hex-color-regex.svg
 
 [david-url]: https://david-dm.org/regexps/hex-color-regex
-[david-img]: https://img.shields.io/david/regexps/hex-color-regex.svg
+[david-img]: https://img.shields.io/david/dev/regexps/hex-color-regex.svg
 
 [standard-url]: https://github.com/feross/standard
 [standard-img]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
