@@ -11,8 +11,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "bluebird": "^2.9.14",
-    "mukla": "~0.1.0"
+    "assertit": "^0.1.0"
   },
   "keywords": [
     "color",

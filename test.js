@@ -9,8 +9,8 @@
 
 'use strict'
 
-var mukla = require('mukla')
-var regex = require('./index')
+var test = require('assertit')
+var hexColorRegex = require('./index')
 
 var sixDigits = {
   pass: [
@@ -25,8 +25,8 @@ var sixDigits = {
     '#7B68EE',
     '#eeeeee',
     '#ffffff',
+    '#123fff}',
     '#111111'
-  // '#123fff}' // should pass
   ],
   fail: [
     'afebe3',
@@ -54,6 +54,7 @@ var sixDigits = {
     '#666EFR'
   ]
 }
+
 var threeDigits = {
   pass: [
     '#afe',
@@ -68,7 +69,7 @@ var threeDigits = {
     '#777',
     '#FFF',
     '#fff',
-    // '#f3f}', should pass
+    '#f3f}',
     '#111'
   ],
   fail: [
@@ -86,20 +87,67 @@ var threeDigits = {
   ]
 }
 
-var urlTest = 'http://www.example.com/index.html#f06d06'
+test('hex-color-regex:', function () {
+  test('in no strict mode', function () {
+    test('six digit hex', function () {
+      test('should be `true`', function () {
+        sixDigits.pass.forEach(function (hex) {
+          test('when `' + hex + '` value', function () {
+            test.equal(hexColorRegex().test(hex), true)
+          })
+        })
+      })
+      test('should be `false`', function () {
+        sixDigits.fail.forEach(function (hex) {
+          test('when `' + hex + '` value', function () {
+            test.equal(hexColorRegex().test(hex), false)
+          })
+        })
+      })
+    })
+    test('three digit hex', function () {
+      test('should be `true`', function () {
+        threeDigits.pass.forEach(function (hex) {
+          test('when `' + hex + '` value', function () {
+            test.equal(hexColorRegex().test(hex), true)
+          })
+        })
+      })
+      test('should be `false`', function () {
+        threeDigits.fail.forEach(function (hex) {
+          test('when `' + hex + '` value', function () {
+            test.equal(hexColorRegex().test(hex), false)
+          })
+        })
+      })
+    })
+    test('using regex().exec(hex)', function () {
+      sixDigits.pass.forEach(function (hex) {
+        var hexed = hex.replace('}', '')
+        test('should match `' + hexed + '` when `' + hex + '` hex', function () {
+          var actual = hexColorRegex().exec(hex)[0]
+          var expected = hexed
 
-sixDigits.pass.forEach(function (hex) {
-  mukla('should be `true` when `' + hex + '` value').strictEqual(regex().test(hex), true)
-})
-sixDigits.fail.forEach(function (hex) {
-  mukla('should be `false` when `' + hex + '` value').strictEqual(regex().test(hex), false)
-})
+          test.equal(actual, expected)
+        })
+      })
+      threeDigits.pass.forEach(function (hex) {
+        var hexed = hex.replace('}', '')
+        test('should match `' + hexed + '` when `' + hex + '` hex', function () {
+          var actual = hexColorRegex().exec(hex)[0]
+          var expected = hexed
 
-threeDigits.pass.forEach(function (hex) {
-  mukla('should be `true` when `' + hex + '` hex value').strictEqual(regex().test(hex), true)
+          test.equal(actual, expected)
+        })
+      })
+    })
+  })
+  test('in strict mode', function () {
+    test('six digit hex `#123fff}` should return false', function () {
+      test.equal(hexColorRegex({strict: true}).test('#123fff}'), false)
+    })
+    test('three digit hex `#f3f}` should return false', function () {
+      test.equal(hexColorRegex({strict: true}).test('#f3f}'), false)
+    })
+  })
 })
-threeDigits.fail.forEach(function (hex) {
-  mukla('should be `false` when `' + hex + '` hex value').strictEqual(regex().test(hex), false)
-})
-mukla('should be `false` when `' + urlTest + '` is passed in with strict mode').strictEqual(regex({strict: true}).test(urlTest), false)
-mukla('should be `true` when `' + urlTest + '` is passed in without strict mode').strictEqual(regex().test(urlTest), true)
