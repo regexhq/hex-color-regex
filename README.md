@@ -2,7 +2,7 @@
 
 > The best regular expression (regex) for matching hex color values from string.
 
-[![code climate][codeclimate-img]][codeclimate-url] [![standard code style][standard-img]][standard-url] [![travis build status][travis-img]][travis-url] [![coverage status][coveralls-img]][coveralls-url] [![dependency status][david-img]][david-url]
+[![code climate][codeclimate-img]][codeclimate-url] [![standard code style][standard-img]][standard-url] [![travis build status][travis-img]][travis-url] [![coverage status][coverage-img]][coverage-url] [![dependency status][david-img]][david-url]
 
 
 ## Install
@@ -40,6 +40,9 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 
 [codeclimate-url]: https://codeclimate.com/github/regexps/hex-color-regex
 [codeclimate-img]: https://img.shields.io/codeclimate/github/regexps/hex-color-regex.svg
+
+[coverage-url]: https://codeclimate.com/github/regexps/hex-color-regex
+[coverage-img]: https://img.shields.io/codeclimate/coverage/github/regexps/hex-color-regex.svg
 
 [travis-url]: https://travis-ci.org/regexps/hex-color-regex
 [travis-img]: https://img.shields.io/travis/regexps/hex-color-regex.svg
