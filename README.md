@@ -17,6 +17,58 @@ npm test
 
 ```js
 var hexColorRegex = require('hex-color-regex')
+
+hexColorRegex().test('#f3f}') //=> true
+hexColorRegex({strict: true}).test('#f3f}') //=> false
+
+hexColorRegex().test('foo #f3f bar') //=> true
+hexColorRegex({strict: true}).test('foo #f3f bar') //=> false
+
+hexColorRegex().test('#a54f2c}') //=> true
+hexColorRegex({strict: true}).test('#a54f2c}') //=> false
+
+hexColorRegex().test('foo #a54f2c bar') //=> true
+hexColorRegex({strict: true}).test('foo #a54f2c bar') //=> false
+
+hexColorRegex().test('#ffff') //=> false
+hexColorRegex().test('ffff') //=> false
+
+hexColorRegex().test('#fff') //=> true
+hexColorRegex().test('fff') //=> false
+
+hexColorRegex().test('#4g1') //=> false
+hexColorRegex().test('4g1') //=> false
+hexColorRegex().test('#zY1') //=> false
+hexColorRegex().test('zY1') //=> false
+hexColorRegex().test('#7f68ZY') //=> false
+hexColorRegex().test('7f68ZY') //=> false
+hexColorRegex().test('ffffff') //=> false
+
+hexColorRegex().test('#afebe3') //=> true
+hexColorRegex().test('#AFEBE3') //=> true
+hexColorRegex().test('#3cb371') //=> true
+hexColorRegex().test('#3CB371') //=> true
+hexColorRegex().test('#556b2f') //=> true
+hexColorRegex().test('#556B2F') //=> true
+hexColorRegex().test('#708090') //=> true
+hexColorRegex().test('#7b68ee') //=> true
+hexColorRegex().test('#7B68EE') //=> true
+hexColorRegex().test('#eeeeee') //=> true
+hexColorRegex().test('#ffffff') //=> true
+hexColorRegex().test('#111111') //=> true
+
+hexColorRegex().test('#afe') //=> true
+hexColorRegex().test('#AF3') //=> true
+hexColorRegex().test('#3cb') //=> true
+hexColorRegex().test('#3CB') //=> true
+hexColorRegex().test('#b2f') //=> true
+hexColorRegex().test('#5B2') //=> true
+hexColorRegex().test('#708') //=> true
+hexColorRegex().test('#68e') //=> true
+hexColorRegex().test('#7AF') //=> true
+hexColorRegex().test('#777') //=> true
+hexColorRegex().test('#FFF') //=> true
+hexColorRegex().test('#fff') //=> true
 ```
 
 
