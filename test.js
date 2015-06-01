@@ -1,14 +1,16 @@
-/**
+/*!
  * hex-color-regex <https://github.com/regexps/hex-color-regex>
  *
- * Copyright (c) 2014-2015 Charlike Mike Reagent, contributors.
+ * Copyright (c) 2015 Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)
  * Released under the MIT license.
  */
 
-'use strict';
+/* jshint asi:true */
 
-var mukla = require('mukla');
-var regex = require('./index');
+'use strict'
+
+var mukla = require('mukla')
+var regex = require('./index')
 
 var sixDigits = {
   pass: [
@@ -23,8 +25,8 @@ var sixDigits = {
     '#7B68EE',
     '#eeeeee',
     '#ffffff',
-    '#111111',
-    // '#123fff}' // should pass
+    '#111111'
+  // '#123fff}' // should pass
   ],
   fail: [
     'afebe3',
@@ -51,7 +53,7 @@ var sixDigits = {
     '#Z68',
     '#666EFR'
   ]
-};
+}
 var threeDigits = {
   pass: [
     '#afe',
@@ -82,24 +84,22 @@ var threeDigits = {
     '#Ge3',
     '#zY1'
   ]
-};
+}
 
-var urlTest = 'http://www.example.com/index.html#f06d06';
+var urlTest = 'http://www.example.com/index.html#f06d06'
 
-sixDigits.pass.forEach(function(hex) {
-  mukla('should be `true` when `'+ hex +'` value').strictEqual(regex().test(hex), true);
-});
-sixDigits.fail.forEach(function(hex) {
-  mukla('should be `false` when `'+ hex +'` value').strictEqual(regex().test(hex), false);
-});
+sixDigits.pass.forEach(function (hex) {
+  mukla('should be `true` when `' + hex + '` value').strictEqual(regex().test(hex), true)
+})
+sixDigits.fail.forEach(function (hex) {
+  mukla('should be `false` when `' + hex + '` value').strictEqual(regex().test(hex), false)
+})
 
-threeDigits.pass.forEach(function(hex) {
-  mukla('should be `true` when `'+ hex +'` hex value').strictEqual(regex().test(hex), true);
-});
-threeDigits.fail.forEach(function(hex) {
-  mukla('should be `false` when `'+ hex +'` hex value').strictEqual(regex().test(hex), false);
-});
-mukla('should be `false` when `' + urlTest + '` is passed in with strict mode').strictEqual(regex({strict:true}).test(urlTest), false);
-mukla('should be `true` when `' + urlTest + '` is passed in without strict mode').strictEqual(regex().test(urlTest), true);
-
-
+threeDigits.pass.forEach(function (hex) {
+  mukla('should be `true` when `' + hex + '` hex value').strictEqual(regex().test(hex), true)
+})
+threeDigits.fail.forEach(function (hex) {
+  mukla('should be `false` when `' + hex + '` hex value').strictEqual(regex().test(hex), false)
+})
+mukla('should be `false` when `' + urlTest + '` is passed in with strict mode').strictEqual(regex({strict: true}).test(urlTest), false)
+mukla('should be `true` when `' + urlTest + '` is passed in without strict mode').strictEqual(regex().test(urlTest), true)

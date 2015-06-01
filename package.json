@@ -1,19 +1,18 @@
 {
   "name": "hex-color-regex",
-  "version": "1.1.0",
-  "description": "Regular expression (regex) for matching hex color values from string.",
+  "version": "1.0.1",
+  "description": "The best regular expression (regex) for matching hex color values from string.",
+  "repository": "regexps/hex-color-regex",
+  "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",
+  "main": "index.js",
+  "license": "MIT",
   "scripts": {
-    "lint": "jshint index.js && jscs index.js --reporter inline",
-    "test": "node test.js"
+    "test": "standard && node test.js"
   },
-  "author": {
-    "name": "Charlike Make Reagent",
-    "email": "mameto_100@mail.bg",
-    "url": "https://github.com/tunnckoCore"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/regexps/hex-color-regex.git"
+  "dependencies": {},
+  "devDependencies": {
+    "bluebird": "^2.9.14",
+    "mukla": "~0.1.0"
   },
   "keywords": [
     "color",
@@ -30,14 +29,5 @@
     "regexps",
     "regular",
     "web"
-  ],
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/regexps/hex-color-regex/blob/master/license.md"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "bluebird": "^2.9.14",
-    "mukla": "~0.1.0"
-  }
+  ]
 }
