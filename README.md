@@ -1,4 +1,4 @@
-# hex-color-regex [![npmjs.com][npmjs-img]][npmjs-url] [![The MIT License][license-img]][license-url] 
+# [hex-color-regex][author-www-url] [![npmjs.com][npmjs-img]][npmjs-url] [![The MIT License][license-img]][license-url] 
 
 > The best regular expression (regex) for matching hex color values from string.
 
@@ -19,6 +19,7 @@ npm test
 - `return` **{RegExp}**
 
 **Example**
+
 ```js
 var hexColorRegex = require('hex-color-regex')
 
@@ -82,6 +83,7 @@ hexColorRegex().test('#fff') //=> true
 - `match[1]` hex value without the hash - `f3f3f3`
 
 **Example**
+
 ```js
 hexColorRegex().exec('foo #fff bar')
 //=> [ '#fff', 'fff', index: 4, input: 'foo #fff bar' ]
@@ -97,8 +99,20 @@ hexColorRegex({strict: true}).exec('foo #f3f3f3 bar')
 ```
 
 
-## Contributing
+## Related
+- [benz](https://github.com/tunnckocore/benz): Compose your control flow with absolute elegance. Support async/await, callbacks, thunks, generators, promises, observables, child… [more](https://github.com/tunnckocore/benz)
+- [is-hexcolor](https://github.com/tunnckocore/is-hexcolor): Check that given value is valid hex color, using `hex-color-regex` - the best regex for… [more](https://github.com/tunnckocore/is-hexcolor)
+- [is-ansi](https://github.com/tunnckocore/is-ansi): Check that given string contain ANSI color codes, without CLI
+- [is-missing](https://github.com/tunnckocore/is-missing): Check that given `name` or `user/repo` exists in npm registry or in github as user… [more](https://github.com/tunnckocore/is-missing)
+- [is-kindof](https://github.com/tunnckocore/is-kindof): Check type of given javascript value. Support promises, generators, streams, and native types. Thin wrapper… [more](https://github.com/tunnckocore/is-kindof)
+- [is-typeof-error](https://github.com/tunnckocore/is-typeof-error): Check that given value is any type of error and instanceof Error
+- [is-async-function](https://github.com/tunnckocore/is-async-function): Check that given function is async (callback) function or not. Trying to guess that based… [more](https://github.com/tunnckocore/is-async-function)
+- [kind-error](https://github.com/tunnckocore/kind-error): Correct inheriting from `Error`. Supports constructing from an object of properties - focused on assertion.
+- [kind-of-extra](https://github.com/tunnckocore/kind-of-extra): Extends `kind-of` type check utility with support for promises, generators, streams and errors. Like `kindof(Promise.resolve(1))… [more](https://github.com/tunnckocore/kind-of-extra)
+- [vez](https://github.com/tunnckocore/vez): Middleware composition at new level. Ultimate alternative to `ware`, `plugins`, `koa-compose` and `composition` packages. Allows… [more](https://github.com/tunnckocore/vez)
 
+
+## Contributing
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/regexps/hex-color-regex/issues/new).  
 But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) guidelines.
 
