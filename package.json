@@ -1,6 +1,6 @@
 {
   "name": "hex-color-regex",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The best regular expression (regex) for matching hex color values from string.",
   "repository": "regexps/hex-color-regex",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",

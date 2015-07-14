@@ -1,5 +1,11 @@
 
 
+## 1.0.3 / 2015-07-14
+- Release v1.0.3 / npm@v1.0.3
+- update stuff, add related libs, @tunnckoCore
+- merge pull request #8, @kevva
+- Null guard, @bevacqua
+
 ## 1.0.2 / 2015-06-01
 - Release v1.0.2 / npm@v1.0.2
 - david to watch for devDeps
