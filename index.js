@@ -7,8 +7,10 @@
 
 'use strict'
 
-module.exports = function hexColorRegex (opts) {
+module.exports = function hexColorRegex(opts) {
   opts = opts && typeof opts === 'object' ? opts : {}
 
-  return opts.strict ? /^#([a-f0-9]{3,4}|[a-f0-9]{4}(?:[a-f0-9]{2}){1,2})\b$/i : /#([a-f0-9]{3}|[a-f0-9]{4}(?:[a-f0-9]{2}){0,2})\b/gi
+  return opts.strict
+    ? /^#([a-f0-9]{3,4}|[a-f0-9]{4}(?:[a-f0-9]{2}){1,2})\b$/i
+    : /#([a-f0-9]{3}|[a-f0-9]{4}(?:[a-f0-9]{2}){0,2})\b/gi
 }
