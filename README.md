@@ -129,11 +129,11 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 [license-img]: https://img.shields.io/badge/license-MIT-blue.svg
 
 
-[codeclimate-url]: https://codeclimate.com/github/regexhq/hex-color-regex
-[codeclimate-img]: https://img.shields.io/codeclimate/github/regexhq/hex-color-regex.svg
+[codeclimate-url]: https://codeclimate.com/github/regexps/hex-color-regex
+[codeclimate-img]: https://img.shields.io/codeclimate/github/regexps/hex-color-regex.svg
 
-[coverage-url]: https://codeclimate.com/github/regexhq/hex-color-regex
-[coverage-img]: https://img.shields.io/codeclimate/coverage/github/regexhq/hex-color-regex.svg
+[coverage-url]: https://codeclimate.com/github/regexps/hex-color-regex
+[coverage-img]: https://img.shields.io/codeclimate/coverage/github/regexps/hex-color-regex.svg
 
 [travis-url]: https://travis-ci.org/regexhq/hex-color-regex
 [travis-img]: https://img.shields.io/travis/regexhq/hex-color-regex.svg
