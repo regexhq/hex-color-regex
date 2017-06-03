@@ -11,7 +11,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "assertit": "^0.1.0"
+    "mukla": "^0.4.9"
   },
   "keywords": [
     "color",
