@@ -1,5 +1,15 @@
 
 
+## 1.1.0 / 2017-06-03
+- Release v1.1.0
+- Add support for "alpha" channel in hex colors (merge [#11](https://github.com/regexhq/hex-color-regex/pull/11)):
+  - `#RRGGBBAA`
+  - `#RGBA`
+
+Reference
+- https://googlechrome.github.io/samples/css-alpha-channel/
+- https://www.chromestatus.com/feature/5685348285808640
+
 ## 1.0.3 / 2015-07-14
 - Release v1.0.3 / npm@v1.0.3
 - update stuff, add related libs, @tunnckoCore
